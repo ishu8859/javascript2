@@ -1,60 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Interactive JavaScript Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-  <div class="container">
-    <h1>Interactive JavaScript Website</h1>
-
-    <!-- Program 1: Toggle Visibility -->
-    <button onclick="toggleVisibility()">Toggle Box</button>
-    <div id="box" style="display: none;">This is a hidden box.</div>
-
-    <!-- Program 2: Simple Calculator -->
-    <input type="text" id="calculatorInput" readonly>
-    <button onclick="calculate()">Calculate</button>
-
-    <!-- Program 3: Random Number Generator -->
-    <button onclick="generateRandom()">Generate Random Number</button>
-    <div id="randomNumber"></div>
-
-    <!-- Program 4: Text Length Counter -->
-    <textarea id="textInput" oninput="countCharacters()"></textarea>
-    <div id="charCount">Characters: 0</div>
-
-    <!-- Program 5: Color Changer -->
-    <button onclick="changeColor()">Change Color</button>
-    <div id="coloredBox"></div>
-
-    <!-- ... Previous HTML code ... -->
-
-    <!-- Program 6: Image Slider -->
-    <div class="slider-container">
-      <button onclick="previousSlide()">Previous</button>
-      <img id="sliderImage" src="image1.jpg" alt="Slider Image">
-      <button onclick="nextSlide()">Next</button>
+    <div class="calculator">
+        <input type="text" id="display" readonly>
+        <br>
+        <button onclick="clearDisplay()">C</button>
+        <button onclick="appendToDisplay('1')">1</button>
+        <!-- Add other number buttons and operators -->
+        <button onclick="calculate()">=</button>
     </div>
-
-<!-- Program 7: Date and Time -->
-<div id="dateTime"></div>
-
-<!-- Program 8: Click Counter -->
-<button onclick="countClicks()">Click Me</button>
-<div id="clickCount">Click Count: 0</div>
-
-<!-- ... Additional Programs ... -->
-
+  
+  <!-- Add this code to your existing HTML file -->
+<div class="factorial-calculator">
+    <label for="number">Enter a number:</label>
+    <input type="number" id="number">
+    <button onclick="calculateFactorial()">Calculate Factorial</button>
+    <p id="result"></p>
 </div>
 
-<!-- ... Remaining HTML code ... -->
+  <!-- Add this code to your existing HTML file -->
+<div class="prime-number-checker">
+    <label for="primeNumber">Enter a number:</label>
+    <input type="number" id="primeNumber">
+    <button onclick="checkPrime()">Check Prime</button>
+    <p id="primeResult"></p>
+</div>
 
-  </div>
-
-  <script src="script.js"></script>
+  <!-- Add this code to your existing HTML file -->
+<div class="palindrome-checker">
+    <label for="inputPalindrome">Enter a word or number:</label>
+    <input type="text" id="inputPalindrome">
+    <button onclick="checkPalindrome()">Check Palindrome</button>
+    <p id="palindromeResult"></p>
+</div>
+    <script src="script.js"></script>
 </body>
 </html>
