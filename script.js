@@ -356,3 +356,55 @@ function concatenateStrings() {
     }
 }
 
+// Add this code to your existing JavaScript file
+class Node {
+    constructor(data){
+        this.data = data;
+        this.next = null;
+    }
+}
+
+function performLinkedListOperations(){
+    let listInput = document.getElementById('listInput').value;
+    let resultElement = document.getElementById('linkedListResult');
+
+    if(listInput === ''){
+        resultElement.textContent = 'PLease enter linked list element.';
+        return;
+    }
+
+    const listElements = listInput.split(',').map(item => parseInt(item.trim()));
+    let hed = createLinkedList(listElements);
+
+    // Implement linked list operation as needed
+
+    // Example: Displaying the linked list
+
+    resultElement.textContent = 'Linked List: ';
+    displayLInkedList(head);
+}
+
+function createLinkedList(elements) {
+    if (elements.length === 0) {
+        return null;
+    }
+
+    let head = new Node(elements[0]);
+    let current = head;
+
+    for(let i = 1; i < elements.length; i++){
+        current.next = new Node(elements[i]);
+        current = current.next;
+    }
+
+    return head;
+}
+
+function displayLInkedList(head){
+    let current = head;
+    while(current != null){
+        resultElement.textContent += '${current.data} -> ';
+        current = current.next;
+    }
+    resultElement.textContent += 'null';
+}
