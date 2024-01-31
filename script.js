@@ -331,3 +331,47 @@ function performMatrixOperations() {
         resultElement.textContent += `[${row.join(', ')}]\n`;
     });
 }
+
+// Add this code to your existing JavaScript file
+function checkArmstrongNumber() {
+    let inputArmstrongNumber = document.getElementById('armstrongNumber').value;
+    let resultElement = document.getElementById('armstrongNumberResult');
+
+    if (inputArmstrongNumber === '') {
+        resultElement.textContent = 'Please enter a number.';
+        return;
+    }
+
+    inputArmstrongNumber = parseInt(inputArmstrongNumber);
+    const numDigits = inputArmstrongNumber.toString().length;
+    let temp = inputArmstrongNumber;
+    let armstrongSum = 0;
+
+    while (temp > 0) {
+        const digit = temp % 10;
+        armstrongSum += Math.pow(digit, numDigits);
+        temp = Math.floor(temp / 10);
+    }
+
+    if (armstrongSum === inputArmstrongNumber) {
+        resultElement.textContent = `${inputArmstrongNumber} is an Armstrong number.`;
+    } else {
+        resultElement.textContent = `${inputArmstrongNumber} is not an Armstrong number.`;
+    }
+}
+
+// Add this code to your existing JavaScript file
+function concatenateStrings() {
+    let str1 = document.getElementById('string1').value;
+    let str2 = document.getElementById('string2').value;
+    let resultElement = document.getElementById('concatenationResult');
+
+    const concatenatedString = str1 + str2;
+
+    if (str1 === '' || str2 === '') {
+        resultElement.textContent = 'Please enter both strings.';
+    } else {
+        resultElement.textContent = `Concatenated String: ${concatenatedString}`;
+    }
+}
+
