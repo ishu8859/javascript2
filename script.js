@@ -408,3 +408,87 @@ function displayLInkedList(head){
     }
     resultElement.textContent += 'null';
 }
+
+// Add this code to your existing JavaScript file
+function calculateGCD() {
+    let num1 = document.getElementById('gcdNumber1').value;
+    let num2 = document.getElementById('gcdNumber2').value;
+    let resultElement = document.getElementById('gcdResult');
+
+    if (num1 === '' || num2 === '') {
+        resultElement.textContent = 'Please enter both numbers.';
+        return;
+    }
+
+    num1 = parseInt(num1);
+    num2 = parseInt(num2);
+
+    const gcd = findGCD(num1, num2);
+
+    resultElement.textContent = `GCD of ${num1} and ${num2} is: ${gcd}`;
+}
+
+function findGCD(a, b) {
+    while (b !== 0) {
+        const temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return Math.abs(a);
+}
+
+// Add this code to your existing JavaScript file
+function calculateLCM() {
+    let num1 = document.getElementById('lcmNumber1').value;
+    let num2 = document.getElementById('lcmNumber2').value;
+    let resultElement = document.getElementById('lcmResult');
+
+    if (num1 === '' || num2 === '') {
+        resultElement.textContent = 'Please enter both numbers.';
+        return;
+    }
+
+    num1 = parseInt(num1);
+    num2 = parseInt(num2);
+
+    const lcm = findLCM(num1, num2);
+
+    resultElement.textContent = `LCM of ${num1} and ${num2} is: ${lcm}`;
+}
+
+function findLCM(a, b) {
+    // LCM is the product of the two numbers divided by their GCD
+    return (a * b) / findGCD(a, b);
+}
+
+function findGCD(a, b) {
+    while (b !== 0) {
+        const temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return Math.abs(a);
+}
+
+// Add this code to your existing JavaScript file
+function calculatePower() {
+    let base = document.getElementById('base').value;
+    let exponent = document.getElementById('exponent').value;
+    let resultElement = document.getElementById('powerResult');
+
+    if (base === '' || exponent === '') {
+        resultElement.textContent = 'Please enter both the base and the exponent.';
+        return;
+    }
+
+    base = parseFloat(base);
+    exponent = parseInt(exponent);
+
+    const power = calculatePowerFunction(base, exponent);
+
+    resultElement.textContent = `${base}^${exponent} is: ${power}`;
+}
+
+function calculatePowerFunction(base, exponent) {
+    return Math.pow(base, exponent);
+}
